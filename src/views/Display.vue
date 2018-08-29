@@ -32,7 +32,7 @@ export default {
 
     }
   },
-  mounted () {
+  mounted() {
     function setUserAgent(window, userAgent) {
       if (window.navigator.userAgent != userAgent) {
         var userAgentProp = { get: function () { return userAgent; } };
@@ -46,6 +46,17 @@ export default {
       }
     }
     setUserAgent(document.querySelector('iframe').contentWindow, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15')
+    navigator.__defineGetter__('userAgent', function () {
+      return 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15' // customized user agent
+    });
+
+    navigator.userAgent; // 'foo'
+    document.querySelector('iframe').contentWindow.navigator.__defineGetter__('userAgent', function () {
+      return 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15' // customized user agent
+    });
+
+    document.querySelector('iframe').contentWindow.navigator.userAgent; // 'foo'
+    document.querySelector('iframe').contentWindow.location.reload();
   },
   props: ['docsLink'],
   name: 'display'
