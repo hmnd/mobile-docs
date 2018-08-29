@@ -32,7 +32,7 @@ export default {
 
     }
   },
-  mounted() {
+  mounted () {
     function setUserAgent(window, userAgent) {
       if (window.navigator.userAgent != userAgent) {
         var userAgentProp = { get: function () { return userAgent; } };
@@ -45,7 +45,7 @@ export default {
         }
       }
     }
-    setUserAgent(document.querySelector('iframe').contentWindow, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36')
+    setUserAgent(document.querySelector('iframe').contentWindow, 'Mozilla/5.0 (Windows; U; Windows NT 10.0; en-US) AppleWebKit/604.1.38 (KHTML, like Gecko) Chrome/68.0.3325.162')
   },
   props: ['docsLink'],
   name: 'display'

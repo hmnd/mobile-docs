@@ -26,8 +26,9 @@ export default new Router({
       beforeEnter: (to, from, next) => {
         if (to.query.docslink && /\/document\/d\/([a-zA-Z0-9-_]+)/.test(to.query.docslink)) {
           next()
+        } else {
+          next('/')
         }
-        next('/')
       }
     }
   ]
