@@ -45,7 +45,7 @@ export default {
         }
       }
     }
-    setUserAgent(document.querySelector('iframe').contentWindow, 'Mozilla/5.0 (Windows; U; Windows NT 10.0; en-US) AppleWebKit/604.1.38 (KHTML, like Gecko) Chrome/68.0.3325.162')
+    setUserAgent(document.querySelector('iframe').contentWindow, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15')
   },
   props: ['docsLink'],
   name: 'display'
